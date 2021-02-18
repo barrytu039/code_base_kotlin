@@ -2,6 +2,7 @@ package com.barry.kotlin_code_base.bulletscreen
 
 import android.os.Handler
 import android.os.Looper
+import com.barry.bulletscreen.bulletscreen.BulletScreenView
 import kotlinx.coroutines.*
 
 object BulletScreenManager {
