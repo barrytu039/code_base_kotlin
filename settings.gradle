@@ -1,6 +1,5 @@
 include ':codebase'
 include ':exoplayer'
 include ':appbarlayout_multiple_phase'
-include ':bulletscreenview'
 include ':app'
 rootProject.name = "kotlin_code_base"
