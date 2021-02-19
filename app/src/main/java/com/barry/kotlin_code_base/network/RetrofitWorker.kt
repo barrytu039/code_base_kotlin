@@ -16,7 +16,7 @@ class RetrofitWorker {
     init {
         okHttpClient = OkHttpProvider.clientBuilder.build()
         retrofit = Retrofit.Builder()
-            .baseUrl("https://jsonplaceholder.typicode.com/")
+            .baseUrl("/")
             .addConverterFactory(ScalarsConverterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)

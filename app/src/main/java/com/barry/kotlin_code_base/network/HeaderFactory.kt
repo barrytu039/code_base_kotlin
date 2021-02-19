@@ -18,3 +18,10 @@ class HeaderFactory {
         }
     }
 }
+
+enum class ContentType {
+    Json,
+    UrlEncoded,
+    MultipartFormData,
+    NONE
+}
