@@ -1,3 +1,5 @@
+include ':glideutil'
+include ':base'
 include ':codebase'
 include ':exoplayer'
 include ':appbarlayout_multiple_phase'

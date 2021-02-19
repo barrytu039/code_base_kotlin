@@ -13,9 +13,10 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/appbarlayout_multiple_phase" />
-            <option value="$PROJECT_DIR$/bulletscreenview" />
+            <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/codebase" />
             <option value="$PROJECT_DIR$/exoplayer" />
+            <option value="$PROJECT_DIR$/glideutil" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
