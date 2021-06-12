@@ -1,5 +1,7 @@
 package com.barry.kotlin_code_base.network
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.RequestBody
 import retrofit2.Response
@@ -25,27 +27,27 @@ class RetrofitWorker {
     }
 
 
-    suspend fun startGetRequest(header : Map<String,String>, url : String, params: Map<String, String>?) : Response<String> {
-        return if (params.isNullOrEmpty()) {
+    suspend fun startGetRequest(header : Map<String,String>, url : String, params: Map<String, String>?) : Response<String> = withContext(Dispatchers.IO) {
+        if (params.isNullOrEmpty()) {
             retrofitService.get(headers = header, url = url)
         } else {
             retrofitService.get(headers = header, url = url, params = params)
         }
     }
 
-    suspend fun startPostRequest(header : Map<String,String>, url : String, requestBody: RequestBody) : Response<*> {
-        return retrofitService.post(headers = header, url = url, requestBody = requestBody)
+    suspend fun startPostRequest(header : Map<String,String>, url : String, requestBody: RequestBody) : Response<*> = withContext(Dispatchers.IO) {
+        retrofitService.post(headers = header, url = url, requestBody = requestBody)
     }
 
-    suspend fun startDeleteRequest(header : Map<String,String>, url : String, requestBody: RequestBody) : Response<*> {
-        return retrofitService.delete(headers = header, url = url, requestBody = requestBody)
+    suspend fun startDeleteRequest(header : Map<String,String>, url : String, requestBody: RequestBody) : Response<*> = withContext(Dispatchers.IO) {
+        retrofitService.delete(headers = header, url = url, requestBody = requestBody)
     }
 
-    suspend fun startPutRequest(header : Map<String,String>, url : String, requestBody: RequestBody) : Response<*> {
-        return retrofitService.put(headers = header, url = url, requestBody = requestBody)
+    suspend fun startPutRequest(header : Map<String,String>, url : String, requestBody: RequestBody) : Response<*> = withContext(Dispatchers.IO) {
+        retrofitService.put(headers = header, url = url, requestBody = requestBody)
     }
 
-    suspend fun startPatchRequest(header : Map<String,String>, url : String, requestBody: RequestBody) : Response<*> {
-        return retrofitService.patch(headers = header, url = url, requestBody = requestBody)
+    suspend fun startPatchRequest(header : Map<String,String>, url : String, requestBody: RequestBody) : Response<*> = withContext(Dispatchers.IO) {
+        retrofitService.patch(headers = header, url = url, requestBody = requestBody)
     }
 }
