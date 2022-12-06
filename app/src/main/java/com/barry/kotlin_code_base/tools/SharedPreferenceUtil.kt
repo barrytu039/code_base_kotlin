@@ -1,16 +1,11 @@
 package com.barry.kotlin_code_base.tools
 
-import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 
 class SharedPreferenceUtil(val context: Context, val name : String) {
 
-    private val sharedPreferenceName : String
-
-    init {
-        sharedPreferenceName = name
-    }
+    private val sharedPreferenceName : String = name
 
     private fun getSharedPreference() : SharedPreferences {
         return context.getSharedPreferences(sharedPreferenceName, Context.MODE_PRIVATE);

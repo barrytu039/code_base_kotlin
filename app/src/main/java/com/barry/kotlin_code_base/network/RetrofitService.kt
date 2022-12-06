@@ -25,6 +25,14 @@ interface RetrofitService {
         @Body requestBody: RequestBody
     ): Response<String>
 
+    @FormUrlEncoded
+    @POST
+    suspend fun post(
+        @HeaderMap headers: Map<String, String>,
+        @Url url: String,
+        @FieldMap fiedlMap: Map<String, String>
+    ): Response<String>
+
     @PUT
     suspend fun put(
         @HeaderMap headers: Map<String, String>,
@@ -32,11 +40,27 @@ interface RetrofitService {
         @Body requestBody: RequestBody
     ): Response<String>
 
+    @FormUrlEncoded
+    @PUT
+    suspend fun put(
+        @HeaderMap headers: Map<String, String>,
+        @Url url: String,
+        @FieldMap requestBody: Map<String, String>
+    ): Response<String>
+
     @HTTP(method = "DELETE", hasBody = true)
     suspend fun delete(
         @HeaderMap headers: Map<String, String>,
         @Url url: String,
         @Body requestBody: RequestBody
+    ): Response<String>
+
+    @FormUrlEncoded
+    @HTTP(method = "DELETE", hasBody = true)
+    suspend fun delete(
+        @HeaderMap headers: Map<String, String>,
+        @Url url: String,
+        @FieldMap requestBody: Map<String, String>
     ): Response<String>
 
     @PATCH
